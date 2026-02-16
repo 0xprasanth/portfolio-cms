@@ -7,6 +7,7 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Articles } from './collections/Articles'
 import { env } from 'process'
 
 const filename = fileURLToPath(import.meta.url)
@@ -23,7 +24,7 @@ export default buildConfig({
             password: env.CMS_SEED_ADMIN_PASSWORD,
         },
     },
-    collections: [Users, Media],
+    collections: [Users, Media, Articles],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || '',
     typescript: {
